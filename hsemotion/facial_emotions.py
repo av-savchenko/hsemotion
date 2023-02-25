@@ -8,7 +8,7 @@ from PIL import Image
 import torch
 from torchvision import transforms
 import timm
-import urllib
+import urllib.request
 
 #def get_path(model_name):
 #    return '../../models/affectnet_emotions/'+model_name+'.pt'
