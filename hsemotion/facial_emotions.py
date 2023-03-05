@@ -46,7 +46,10 @@ class HSEmotionRecognizer:
         )
         
         path=get_model_path(model_name)
-        model=torch.load(path)
+        if device == 'cpu':
+            model=torch.load(path, map_location=torch.device('cpu'))
+        else:
+            model=torch.load(path)
         if isinstance(model.classifier,torch.nn.Sequential):
             self.classifier_weights=model.classifier[0].weight.cpu().data.numpy()
             self.classifier_bias=model.classifier[0].bias.cpu().data.numpy()
