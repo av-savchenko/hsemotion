@@ -5,7 +5,7 @@ requirements = [
     'pillow',
     'torch',
     'torchvision',
-    'timm'
+    'timm=0.9.*'
 ]
 setup(
     name='hsemotion',
